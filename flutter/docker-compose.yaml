@@ -1,0 +1,15 @@
+services:
+  flutter-dev:
+    container_name: flutter-dev-env
+    image: flutter-dev-env  # Replace with the name and tag of your image
+    network_mode: host
+    # ports:
+    #   - "19000:19000"
+    #   - "19001:19001"
+    #   - "19002:19002"
+
+    stdin_open: true  # Keeps stdin open for interactive shell
+    tty: true         # Allocates a pseudo-TTY
+    command: /bin/bash  # Starts an interactive shell
+    volumes:
+      - ../:/usr/src/app/  # Maps the current directory to /usr/src inside the container
