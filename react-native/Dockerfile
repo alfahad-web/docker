@@ -70,14 +70,15 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     autoconf \
     openssl \
-    libssl-dev
-RUN git clone https://github.com/facebook/watchman.git /tmp/watchman && \
-    cd /tmp/watchman
-RUN cd /tmp/watchman && ./autogen.sh
-RUN cd /tmp/watchman && ./configure
-RUN cd /tmp/watchman && make
-RUN cd /tmp/watchman && make install
-RUN rm -rf /tmp/watchman
+    libssl-dev \
+    watchman
+# RUN git clone https://github.com/facebook/watchman.git /tmp/watchman && \
+#     cd /tmp/watchman
+# RUN cd /tmp/watchman && ./autogen.sh
+# RUN cd /tmp/watchman && ./configure
+# RUN cd /tmp/watchman && make
+# RUN cd /tmp/watchman && make install
+# RUN rm -rf /tmp/watchman
 
 # Install Android Emulator and necessary libraries (including Qt and software rendering support)
 RUN apt-get update && apt-get install -y \
